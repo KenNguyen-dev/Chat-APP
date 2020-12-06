@@ -221,13 +221,7 @@ public class MessagingActivity extends AppCompatActivity {
                         String mUri = downloadUri.toString();
                         final String userid=intent.getStringExtra("userid");
 
-//                        reference= FirebaseDatabase.getInstance().getReference("Users").child(firebaseUser.getUid());
-//                        HashMap<String, Object> map = new HashMap<>();
-//                        map.put("imageURL",mUri);
-//                        reference.updateChildren(map);
-
                         sendMessage(firebaseUser.getUid(),userid,mUri,"image");
-
 
 
                         pd.dismiss();
