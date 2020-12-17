@@ -66,10 +66,11 @@
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
             android:layout_marginBottom="4dp"
+            android:background="#FFF"
             app:tabGravity="fill"
             app:tabIndicatorGravity="top"
             app:tabIndicatorHeight="2dp"
-            app:tabMode="fixed"/>
+            app:tabMode="fixed" />
 
     </RelativeLayout>
 
