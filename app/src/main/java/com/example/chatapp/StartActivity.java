@@ -32,6 +32,7 @@ public class StartActivity extends AppCompatActivity {
     TextView tvRegister;
     EditText editTextEmail;
     EditText editTextPassword;
+    TextView forgot_pass;
 
     FirebaseAuth auth;
     FirebaseUser firebaseUser;
@@ -78,6 +79,13 @@ public class StartActivity extends AppCompatActivity {
         tvRegister=findViewById(R.id.tvRegister);
 
         btnLogin.setEnabled(false);
+        forgot_pass=findViewById(R.id.forgot_password);
+        forgot_pass.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(StartActivity.this, Activity_reset_password.class));
+            }
+        });
 
         TextWatcher textWatcher= new TextWatcher() {
             @Override

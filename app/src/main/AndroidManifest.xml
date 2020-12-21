@@ -16,6 +16,7 @@
         <activity android:name=".MessagingActivity" >
         </activity>
         <activity android:name=".Profile" />
+        <activity android:name=".Activity_reset_password"/>
         <activity android:name=".MainActivity" />
         <activity android:name=".RegisterActivity" />
         <activity android:name=".StartActivity" >

@@ -88,7 +88,8 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="15dp"
             android:gravity="right"
-            android:text="Forgot passwword?" />
+            android:text="Forgot passwword?"
+            android:id="@+id/forgot_password"/>
 
 
     </LinearLayout>
