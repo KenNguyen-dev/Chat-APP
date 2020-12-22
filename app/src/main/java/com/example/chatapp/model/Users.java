@@ -1,6 +1,6 @@
 package com.example.chatapp.model;
 
-//Test git abc 12311
+//Test git abc
 public class Users {
 
     private String id;
