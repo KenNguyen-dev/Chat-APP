@@ -29,6 +29,7 @@ public class OreoNotification extends ContextWrapper {
         channel.enableVibration(true);
         channel.setLockscreenVisibility(Notification.VISIBILITY_PRIVATE);
 
+        getManager().createNotificationChannel(channel);
     }
     public NotificationManager getManager(){
         if(notificationManager== null){
