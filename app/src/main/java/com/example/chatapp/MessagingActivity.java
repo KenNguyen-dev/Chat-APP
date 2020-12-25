@@ -81,7 +81,7 @@ public class MessagingActivity extends AppCompatActivity {
 
     Intent intent;
 
-    String userid;
+
 
     ValueEventListener seenListener;
 
@@ -123,12 +123,13 @@ public class MessagingActivity extends AppCompatActivity {
         btn_send_image = findViewById(R.id.btn_send_photo);
 
         intent=getIntent();
-        userid=intent.getStringExtra("userid");
+        final String userid=intent.getStringExtra("userid");
 
 
         btn_send.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                notify=true;
                 String msg= text_send.getText().toString();
                 if(!msg.equals(""))
                 {
@@ -345,12 +346,14 @@ public class MessagingActivity extends AppCompatActivity {
     private void sendNotifications(String receiver, final String username, final String message){
         DatabaseReference tokens = FirebaseDatabase.getInstance().getReference("Tokens");
         Query query = tokens.orderByKey().equalTo(receiver);
+        final String userid = intent.getStringExtra("userid");
+
         query.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 for (DataSnapshot snapshot1 : snapshot.getChildren()){
                     Token token = snapshot1.getValue(Token.class);
-                    Data data = new Data(firebaseUser.getUid(),R.mipmap.ic_launcher,username+": "+message,"New Message",userid);
+                    Data data = new Data(firebaseUser.getUid(),R.mipmap.ic_launcher,username+": "+message,"New Message", userid);
                     Sender sender = new Sender(data, token.getToken());
                     apiService.sendNotifications(sender)
                             .enqueue(new Callback<MyResponse>() {

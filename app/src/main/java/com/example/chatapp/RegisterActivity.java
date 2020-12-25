@@ -25,7 +25,7 @@ import java.util.HashMap;
 
 public class RegisterActivity extends AppCompatActivity {
 
-    EditText userName,passWord,email,fullName,phoneNumber,id;
+    EditText userName,passWord,email,fullName,phoneNumber,id,cfpassword;
     Button btnRegister;
 
     FirebaseAuth auth;
@@ -50,6 +50,7 @@ public class RegisterActivity extends AppCompatActivity {
 
         userName=findViewById(R.id.editUsername);
         passWord=findViewById(R.id.editPassword);
+        cfpassword=findViewById(R.id.editcfPassword);
         email=findViewById(R.id.editTextEmail);
         fullName=findViewById(R.id.fullName);
         phoneNumber=findViewById(R.id.phoneNumber);
@@ -66,7 +67,10 @@ public class RegisterActivity extends AppCompatActivity {
                 }else if(passWord.getText().toString().length()<6)
                 {
                     Toast.makeText(getApplicationContext(),"Passwords length must be greater than 6 characters",Toast.LENGTH_SHORT).show();
-                }else
+                }else if(!passWord.getText().toString().equals(cfpassword.getText().toString())){
+                    Toast.makeText(getApplicationContext(), "Confirm password is not correct",Toast.LENGTH_SHORT).show();
+                }
+                else
                 {
                     String txt_username=userName.getText().toString();
                     String txt_password=passWord.getText().toString();
@@ -74,8 +78,6 @@ public class RegisterActivity extends AppCompatActivity {
                     String txt_fullname=fullName.getText().toString();
                     String txt_phonenumber=phoneNumber.getText().toString();
                     String txt_id=id.getText().toString();
-
-
                     register(txt_username,txt_password,txt_email,txt_fullname,txt_phonenumber,txt_id);
 
 
