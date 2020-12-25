@@ -111,6 +111,13 @@
             android:drawableRight="@drawable/ic_login"
             android:hint="Password"
             android:inputType="textPassword" />
+        <EditText
+            android:id="@+id/editcfPassword"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:drawableRight="@drawable/ic_login"
+            android:hint="Confirm Password"
+            android:inputType="textPassword" />
 
 
     </LinearLayout>
