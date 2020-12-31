@@ -1,8 +1,8 @@
 package com.example.chatapp.Notifications;
 
 public class Data {
-    private  String user;
-    private  int icon;
+    private String user;
+    private int icon;
     private String body;
     private String title;
     private String sented;

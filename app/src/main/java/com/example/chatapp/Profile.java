@@ -75,7 +75,6 @@ public class Profile extends AppCompatActivity {
         fullName=findViewById(R.id.fullName);
         phoneNumber=findViewById(R.id.phoneNumber);
         cmnd=findViewById(R.id.identification);
-
         profile_pic=findViewById(R.id.profile_pic);
         btnSignOut=findViewById(R.id.btnSignOut);
 
